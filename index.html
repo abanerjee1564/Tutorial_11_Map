@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Deaths (Millions)', 'Births (Millions)'],
+          ['2018',  57.35,      139.63],
+          ['2019',  57.94,      137.98],
+          ['2020',  63.17,       135.13],
+          ['2021',  69.25,      133.97]
+        ]);
+
+        var options = {
+          title: 'The Circle of Life: Human Births and Deaths (2018 - 2021)',
+          hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 100%; height: 500px;"></div>
+  </body>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data1 = google.visualization.arrayToDataTable([
+          ['Love', 'Happiness'],
+          [ 1,      1],
+          [ 2,      4],
+          [ 3,     9],
+          [ 4,      16],
+          [ 5,      25],
+          [ 6,    36]
+        ]);
+
+        var options1 = {
+          title: 'Happiness vs. Love comparison',
+          hAxis: {title: 'Love', minValue: 0, maxValue: 6},
+          vAxis: {title: 'Happiness', minValue: 0, maxValue: 36},
+          legend: 'none'
+        };
+
+        var chart = new google.visualization.ScatterChart(document.getElementById('chart_div1'));
+
+        chart.draw(data1, options1);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div1" style="width: 100%; height: 500px;"></div>
+  </body>
+</html>
